@@ -1,44 +1,63 @@
-# 🛡️ CyberGuard AI – Threat Intelligence & Phishing Detection Assistant
+# 🛡️ CyberGuard AI – Phishing Detection Assistant
 
-A powerful, AI-powered cybersecurity tool that detects phishing URLs in real time, scans live phishing feeds, and logs threat intelligence for analysis.
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-online-green?style=flat-square&logo=render)](https://cyberguard-ai.onrender.com)
 
-![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)
-![Machine Learning](https://img.shields.io/badge/ML-RandomForest-green)
-![Status](https://img.shields.io/badge/Status-Active-brightgreen)
-![License](https://img.shields.io/badge/License-MIT-lightgrey)
+A real-time, AI-powered phishing detection platform that scans suspicious URLs, uses machine learning to identify threats, and integrates threat intelligence feeds — all accessible from a clean web interface.
 
 ---
 
 ## 🚀 Features
 
-- 🔍 Real-time phishing URL detection using custom features
-- 🌐 Live phishing feed scanner (auto scans 20 latest links)
-- 🧠 Trained with RandomForest model for 90%+ confidence
-- 🧪 Unit tests included
-- 🧾 Logs results to `phish_feed_scan_log.csv`
-- 📦 Built using Flask, Scikit-learn, Pandas
+- 🔍 Real-time phishing URL scanning
+- 🧠 ML model with custom feature extraction
+- 🌐 Threat feed scanning and logging
+- 📦 Flask REST API + Web UI
+- 📊 Confidence score output
+- 🧪 Unit-tested and production-ready structure
+- 🌍 Deployed on Render for public use
+
+---
+
+## 🌐 Live Demo
+
+👉 [Click to Try the Web App](https://cyberguard-ai.onrender.com)
+
+---
+
+## 📂 Project Structure
+CyberGuard-AI/
+├── app/ # Flask web app
+├── phishing_detector/ # Model, features, ML logic
+├── feeds/ # Threat intelligence URL feed scanner
+├── templates/ # Web UI HTML
+├── logs/ # Phishing scan logs
+├── data/ # CSV dataset
+├── tests/ # Unit tests
+├── requirements.txt
+└── README.md
+
 
 ---
 
 ## 🧠 Tech Stack
 
-- Python 3.10+
-- Flask (REST API)
-- Scikit-learn (ML)
-- Pandas (Data handling)
-- Requests (Threat feed pulling)
+- Python 3
+- Flask
+- Scikit-learn
+- Pandas
+- Requests
+- Joblib
 
 ---
 
-## 📂 Project Structure
+## 🧪 Run Locally
 
 ```bash
-CyberGuard-AI/
-├── app/                    # Flask API
-├── phishing_detector/      # ML model + detection logic
-├── feeds/                  # Live feed collector
-├── logs/                   # Logged results
-├── tests/                  # Unit tests
-├── data/                   # CSV phishing dataset
-├── README.md
-├── requirements.txt
+git clone https://github.com/Adhi3043/Cyberguard-AI.git
+cd Cyberguard-AI
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+python3 phishing_detector/train_model.py
+python3 app/main.py
+
