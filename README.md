@@ -61,3 +61,12 @@ pip install -r requirements.txt
 python3 phishing_detector/train_model.py
 python3 app/main.py
 
+## 📄 License
+---
+
+## 👨‍💻 Author
+
+**Jhansi Aditya Akula**  
+Cybersecurity + AI Engineer  
+[GitHub Profile](https://github.com/Adhi3043)  
+[Live Web App](https://cyberguard-ai.onrender.com)
