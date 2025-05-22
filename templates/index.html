@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CyberGuard AI – Phishing Scanner</title>
+    <style>
+        body {
+            background-image: url("https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=1470&q=80");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            text-shadow: 1px 1px 2px black;
+            font-family: sans-serif;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        input, button {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: black;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .result {
+            margin-top: 40px;
+            font-size: 18px;
+        }
+
+        footer {
+            margin-top: 80px;
+            color: lightgray;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🛡️ CyberGuard AI</h1>
+    <p>Enter a URL to scan for phishing threats:</p>
+    <form method="post" action="/">
+        <input type="text" name="url" placeholder="https://example.com">
+        <br>
+        <button type="submit">Scan</button>
+    </form>
+
+    {% if result %}
+        <div class="result">
+            <h2>🔍 Scan Result:</h2>
+            <p><strong>URL:</strong> {{ result.url }}</p>
+            <p><strong>Status:</strong> 
+                {% if result.is_phishing %}
+                    <span style="color:red;">🚨 Phishing</span>
+                {% else %}
+                    <span style="color:lightgreen;">✅ Safe</span>
+                {% endif %}
+            </p>
+            <p><strong>Confidence:</strong> {{ result.confidence }}%</p>
+        </div>
+    {% endif %}
+
+    <footer>
+        &copy; {{ year }} CyberGuard AI — Built with 🛡️ by Jhansi Aditya Akula
+    </footer>
+</body>
+</html>
+
